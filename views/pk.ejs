@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PLACEMENT</title>
+	<script type="text/javascript" src="assets/js/angular.min.js"></script>
+	<!-- <script src="assets/js/jquery.min.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+.center{
+	margin-left:0px;
+	padding: 43px;
+}
+</style>
+	
+</head>
+<body style="background-color: #ebeff2;">
+	<div>
+		<div id="header_data"></div>
+		</div>
+	<script>
+	
+	 $("#header_data").load('header.html');
+
+	</script>
+	<h3 class="text-primary bg-warning" style="text-align: center; margin-top:30px;"> Please fill the information of internship to make it available</h3>
+<div class="center " style="align-content: center;">
+	<div ng-app="intern_app" ng-controller="form_control"  ng-init="dur=['1','2','3','4','5','6']"class="col-lg-12 col-sm-12" style="background-color: #B26CFD;">
+		<form  action="/internshipAdd" method="get"><br>
+			<legend class="text-dark"  style="text-align: center;">Internship Details</legend>
+			<br>
+			<div >
+				<label  class="text-white">Title of Internship :</label>
+				<input type="text" ng-model="title" name="title" class="text-white "><br>
+				<label class="text-white">Provider <span class="text-danger"> ( Company Name) : </span></label>
+				<input type="text" name="provider" ng-model="provider" class="text-white"><br>
+				<label class="text-white"> Description </label>
+				<div style="border:2px solid white; padding: 10px;	">
+					<label class="text-white">About Internship Provider :</label>
+					<textarea rows="4" cols="9" name="about_internship_provider" class="text-white"></textarea>
+					<br>
+					<label class="text-white"> About Internship :</label>
+					<textarea rows="4" cols="9"name="about_internship" class="text-white"></textarea>
+					<br>
+					<label class="text-white">Duration (In months)</label>
+					<select ng-model="duration" >
+						<option ng-repeat="x  in dur" value="{{x}}">{{x}}</option>
+					</select>
+				</div>
+				<br>
+				<div style="border:2px solid white; padding: 10px;">
+					<label class="text-white">Only those candidates can apply who:</label><br>
+					 <span  > First Option :</span>
+					 	<input type="text" name="opt_1" ng-model="opt_1" class="text-white">
+					 <span >Second Option</span>
+					 	<input type="text" name="opt_2" ng-model="opt_2" class="text-white">
+					 <span>Third Option</span>
+						 <input type="text" name="opt_3" ng-model="opt_3" class="text-white">
+					 <span >Fourth Option</span>
+					 	<input type="text" name="opt_4" ng-model="opt_4" class="text-white"><br>
+				</div>
+				<br>
+
+				<label style="color:black;" >Contact Information</label>
+				<br>
+				<div style="padding: 12px; border:2px solid white;">
+					<label style="color:white">Email :</label>
+					<input type="email" name="mail" ng-model="mail"><br>
+					<label class="text-white">Mobile Number :</label>
+					<input type="text" name="mob" ng-model="mob">
+					<label class="text-white"> Website Link</label>
+					<input type="text" name="link" ng-model="link">
+
+
+				</div>
+				<br>
+			</div>
+			<div style="text-align: center;">
+			<input type="submit" ng-click="validate()" class="bg-primary" value="Submit">
+			<br>
+			<br>
+		</div>
+		</form>	
+
+
+
+	</div>
+	</div>
+</body>
+</html>
+
+<script>
+	
+	var app=angular.module('intern_app',[]);
+	app.controller('form_control',function($scope){
+
+
+	});
+</script>
+

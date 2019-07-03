@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script type="text/javascript">
+		var m=angular.module("example",[]);
+		m.controller('hi',function(){
+			this.name='ravi';
+			this.sal=8765;
+		});
+	</script>
+</head>
+<body ng-app="example">
+	<div ng-controller="hi as k">
+		name is {{k.name}} and sal is :{{k.sal}}
+	</div>
+
+
+</body>
+</html>

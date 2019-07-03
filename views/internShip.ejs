@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PLACEMENT</title>
+	<script type="text/javascript" src="assets/js/angular.min.js"></script>
+	<!-- <script src="assets/js/jquery.min.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="shortcut icon" href="./images/cs2.ico" >
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="a	ssets/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/ma.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<script src="assets/js/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js">
+	</script>
+
+	<style>
+
+	
+.center{
+	margin-left:0px;
+	padding: 43px;
+}
+</style>
+	
+</head>
+<body >
+	<div>
+		<div id="header_data">
+		
+	
+	
+	<!-- Header -->
+		<div class="">
+			<header id="header">
+				<div class="inner" id="inner2">
+					<p href="#"class="logo">WCE  &nbsp;&nbsp;Intern's  &nbsp;&nbsp;		<span id="portal">Portal</span></p>
+					<nav id="nav">
+						<a href="/home">Home</a>
+						<a href="/branch">BRANCH</a>
+						 <a href="/about">ABOUT</a>
+
+						<a href="/home">CONTACT</a>
+						<a href="/signIn"><b style="font-size: 20px; ">LOG IN</b></a> 
+					</nav>
+				</div>
+			</header>
+			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+			</div>
+		</div>
+	</div>
+	<div class="jumbotron">
+		<h3 class="text-primary " style="text-align:center"> Please fill the information of internship to make it available</h3>
+	</div>
+	<div  class="container">
+	<div class=" row" style="align-content: center;">
+		
+			<div ng-app="intern_app" class="col-10" ng-controller="form_control"  ng-init="branch=['Computer','Information Tech','Electronics','Electrical','Mechanical','Civil']" >
+	
+			<form  action="/internShipAdd"  class="responsive " method="POST" name="form"><br>
+			<legend class="text-dark"  style="text-align: center;">Internship Details</legend>
+			<br>
+			<div >
+				<div class="form-control">
+					<label class="text-danger" for="branch"> Branch</label>
+					<input type="text" name="branch"  id="branch"  class="text-dark" >
+				 </div>	
+				 <br>
+				<div class="form-control">
+					<label  class="text-danger" for="tit">Title of Internship :</label>
+					<input type="text" id="tit"ng-model="title" name="title" class="text-dark ">
+				</div>
+				<br>
+				<div class="form-control">
+					<label class="text-danger" for="name">Provider <span class="text-danger"> ( Company Name) : </span></label>
+					<input type="text" name="provider"  id="name"ng-model="provider" class="text-dark">
+				</div>
+				<br>
+				<div class="form-control">
+				<label class="text-danger"> Description </label>
+				<div style="border:2px solid white; padding: 10px;	">
+					<label class="text-danger">About Internship Provider :</label>
+					<textarea rows="4" cols="9" name="about_internship_provider" class="text-dark"></textarea>
+					<br>
+					<label class="text-danger"> About Internship :</label>
+					<textarea rows="4" cols="9"name="about_internship" class="text-dark"></textarea>
+					<br>
+					<label class="text-danger"> Skills</label>
+					<input type="text" name="skills" class="text-dark">
+					<br> 
+					<label class="text-danger">Duration (In months) :</label>
+					<input type="text" name="duration"  class="text-dark"></div>
+					
+					<!-- <select ng-model="duration" name="duration" ng-options="x for x in dur" ></select> -->
+					
+				</div>
+				</div>
+				<br>
+
+				<div class="form-control">
+					<label class="text-danger">Only those candidates can apply who:</label><br>
+					 <span  > First Option :</span>
+					 	<input type="text" name="opt_1" ng-model="opt_1" class="text-dark">
+					 <span >Second Option</span>
+					 	<input type="text" name="opt_2" ng-model="opt_2" class="text-dark">
+					 <span>Third Option</span>
+						 <input type="text" name="opt_3" ng-model="opt_3" class="text-dark">
+					 <span >Fourth Option</span>
+						 <input type="text" name="opt_4" ng-model="opt_4" class="text-dark"><br>
+				</div>
+				<br>
+				<div class="form-control">
+				<label class="text-primary" >Contact Information</label>
+				
+					<div class="">
+						<label class="text-danger">Email :</label>
+						<input type="email" name="email" ng-model="mail">
+					</div>
+					<div class="">
+						<label class="text-danger">Mobile Number :</label>
+						<input type="text" name="mobile" ng-model="mob">
+					</div>
+					<div>
+						<label class="text-danger"> Website Link</label>
+						<input type="text" name="link" ng-model="link">
+					</div>
+					<br>
+					<div class="">
+						
+					<input type="submit" ng-click="validate()" class="bg-primary btn  btn-block" value="Submit">
+								
+					</div>
+
+				</div>
+				<br>
+			</div>
+			
+		</div>
+		</form>	
+	
+	</div>
+	</div>
+	
+</body>
+</html>
+<script>
+	
+	var app=angular.module('intern_app',[]);
+	app.controller('form_control',function($scope){
+
+
+	});
+</script>

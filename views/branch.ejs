@@ -1,0 +1,235 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<link rel="shortcut icon" href="./images/cs2.ico" >
+
+		<title>BRANCH</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/gen1.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/css2.css">
+		<!-- <link rel="stylesheet" type="text/css" href="assets/css/.css"> -->
+		<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css" />
+   	    <link rel="stylesheet" type="text/css" href="assets/font-awesome/css/font-awesome.min.css" />
+   	    <script src="assets/js/angular.min.js"> </script>
+
+     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>  -->
+   		 <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+   			<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> -->
+		
+	</head>
+	
+	<body ng-app="branch"  ng-controller="branchData"  style="background-color: #ebeff2;">
+		<!-- Header -->
+	/*	<header id="header">
+				<div class="inner" id="inner2">
+					<p href="#"class="logo">WCE  &nbsp;&nbsp;Intern's  &nbsp;&nbsp;		<span id="portal">Portal</span></p>
+					<nav id="nav">
+						 <a href="/home">Home</a>
+						<a href="/branch">BRANCH</a>
+						<a href="/about">ABOUT</a>
+
+						<a href="http://www.walchandsangli.ac.in/">CONTACT</a>
+					  <a href="/signIn"><b style="font-size: 20px; ">LOG IN</b></a>  
+					<!-- <button onclick="window.location.href='/logIn'">LOGIN</button> -->
+					</nav>
+				</div>
+			</header>
+			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+		<!-- <header id="header"> 
+				<div class="inner" id="inner2">
+					<a href="index.html" class="logo">WCE  &nbsp;&nbsp;Intern's  &nbsp;&nbsp;		<span id="portal">Portal</span></a>
+					<nav id="nav" style="font-size:18px;">
+						<a href="/home">Home</a>
+						<a href="/branch">BRANCH</a>
+						<a href="elements.html">ABOUT</a>
+
+						<a href="elements.html">CONTACT</a>
+					</nav>
+				</div>
+			</header>
+			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+ -->
+		 <div class="pos" class="col-sm-12 col-lg-2" ng-init="branch=['Computer','Information Tech','Electronics','Electrical','Mechanical','Civil']" >
+		<div class="sidenav" style="background-image:url('images/tech3.jpg');">
+		 <br><br>
+			<br>
+			<ul style="list-style-type: none">
+				<li style="color:white;text-align: center;font-size: 28px;margin-bottom:1px;" ng-click="fun(branch[0])"><a >{{branch[0]}}</a></li>
+				<li style="color:white;text-align: center;font-size: 28px;margin-bottom:1px;" ng-click="fun(branch[1])"><a >{{branch[1]}}</a></li>
+				<li style="color:white;text-align: center;font-size: 28px;margin-bottom:1px;" ng-click="fun(branch[2])"><a >{{branch[2]}}</a></li>
+				<li style="color:white;text-align: center;font-size: 28px;margin-bottom:1px;" ng-click="fun(branch[3])"><a >{{branch[3]}}</a></li>
+				<li style="color:white;text-align: center;font-size: 28px;margin-bottom:1px;" ng-click="fun(branch[4])"><a >{{branch[4]}}</a></li>
+				<li style="color:white;text-align: center;font-size: 28px;margin-bottom:1px;" ng-click="fun(branch[5])"><a >{{branch[5]}}</a></li>
+				</ul>	 		
+		</div>
+	</div>
+
+
+		<div class="main" id="make" data-ng-init="fun('Computer')">
+			 <!-- <h2 style="text-align: center; background-color: ;" class="text-primary">InternShips</h2> -->
+			 <a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+			<div class="jumbotron text-primary">
+				<p style="text-align: center; text-shadow: 2px solid black;font-size: 43px;">Welcome to Internship Portal, Wce</p>
+				<br>
+				<span style="margin-left: 34px;" > Alumina Portal :</span>
+
+				<span style="text-align: center;" class="btn btn-lg bg-primary" ng-click="routerLogIn()">Log In </span>
+			<span style=" margin-left: 278px;">	<span > Student Registration :</span>
+
+				<span style="text-align: center;" class="btn btn-lg bg-primary" ng-click="routerRegister()">Register </span></span>
+				
+			</div>
+			<div ng-repeat="info in data" class="col-lg-12" class="container">
+				
+			
+				<div style="border:2px solid black;">
+					<h3 style="text-align: center; " class="bg-primary text-danger">{{info.title}}</h3>
+					 <table class=" table table stripped"> 
+
+					<tr><td> Provider :</td><td>{{info.provider}}</td></tr>
+
+					<tr><td> Provider Information :</td><td>{{info.provider_info}}</td></tr>
+
+					<tr><td> About InternShip :</td><td>{{info.about_internship}}</td></tr>
+
+					<tr><td> Skills :</td><td>{{info.skills}}</td></tr>
+					
+					<tr><td> Duration:</td><td>{{info.duration}} &nbsp;months</td></tr>
+						
+					<tr><td> Mail :</td><td>{{info.mail}}</td></tr><br>
+
+					<tr><td> Mobile :</td><td>{{info.mobile}}</td></tr><br>
+
+					<tr><td> You Can Visit :</td><td>{{info.link}}</td></tr>
+
+					
+
+
+				</table>
+				<div>
+					<p style="text-align: center;"> Who can Apply :</p>
+					<p style="margin-left: 120px;">1.{{info.opt_1}}</p>
+					<p style="margin-left: 120px;">2.{{info.opt_2}}</p>
+					<p style="margin-left: 120px;">3.{{info.opt_3}}</p>
+					<p style="margin-left: 120px;">4.{{info.opt_4}}</p>
+				</div>
+				</div>
+				
+				<br>
+				</div>
+
+				</div>
+				<br>
+					
+		</div>
+
+
+		
+		</div>
+
+
+
+
+
+
+</body>
+</html>
+
+		<!-- Main 
+			<section id="main" >
+				<div class="inner">
+					<header class="major special">
+						<h1>Generic</h1>
+						<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
+					</header>
+					<a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
+					<p>Vis accumsan feugiat adipiscing nisl amet adipiscing accumsan blandit accumsan sapien blandit ac amet faucibus aliquet placerat commodo. Interdum ante aliquet commodo accumsan vis phasellus adipiscing. Ornare a in lacinia. Vestibulum accumsan ac metus massa tempor. Accumsan in lacinia ornare massa amet. Ac interdum ac non praesent. Cubilia lacinia interdum massa faucibus blandit nullam. Accumsan phasellus nunc integer. Accumsan euismod nunc adipiscing lacinia erat ut sit. Arcu amet. Id massa aliquet arcu accumsan lorem amet accumsan.</p>
+					<p>Amet nibh adipiscing adipiscing. Commodo ante vis placerat interdum massa massa primis. Tempus condimentum tempus non ac varius cubilia adipiscing placerat lorem turpis at. Aliquet lorem porttitor interdum. Amet lacus. Aliquam lobortis faucibus blandit ac phasellus. In amet magna non interdum volutpat porttitor metus a ante ac neque. Nisi turpis. Commodo col. Interdum adipiscing mollis ut aliquam id ante adipiscing commodo integer arcu amet Ac interdum ac non praesent. Cubilia lacinia interdum massa faucibus blandit nullam. Accumsan phasellus nunc integer. Accumsan euismod nunc adipiscing lacinia erat ut sit. Arcu amet. Id massa aliquet arcu accumsan lorem amet accumsan commodo odio cubilia ac eu interdum placerat placerat arcu commodo lobortis adipiscing semper ornare pellentesque.</p>
+					<p>Amet nibh adipiscing adipiscing. Commodo ante vis placerat interdum massa massa primis. Tempus condimentum tempus non ac varius cubilia adipiscing placerat lorem turpis at. Aliquet lorem porttitor interdum. Amet lacus. Aliquam lobortis faucibus blandit ac phasellus. In amet magna non interdum volutpat porttitor metus a ante ac neque. Nisi turpis. Commodo col. Interdum adipiscing mollis ut aliquam id ante adipiscing commodo integer arcu amet blandit adipiscing arcu ante.</p>
+				</div>
+			</section>
+
+		 Footer 
+			<section id="footer">
+				<div class="inner">
+					<header>
+						<h2>Get in Touch</h2>
+					</header>
+					<form method="post" action="#">
+						<div class="field half first">
+							<label for="name">Name</label>
+							<input type="text" name="name" id="name" />
+						</div>
+						<div class="field half">
+							<label for="email">Email</label>
+							<input type="text" name="email" id="email" />
+						</div>
+						<div class="field">
+							<label for="message">Message</label>
+							<textarea name="message" id="message" rows="6"></textarea>
+						</div>
+						<ul class="actions">
+							<li><input type="submit" value="Send Message" class="alt" /></li>
+						</ul>
+					</form>
+					<div class="copyright">
+						&copy; Untitled Design: <a href="https://templated.co/">TEMPLATED</a>. Images <a href="https://unsplash.com/">Unsplash</a>
+					</div>
+				</div>
+			</section>
+
+		scripts
+
+
+ 		
+			
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
+
+
+-->
+<script src="assets/js/jquery.min.js"></script>
+<script > 
+
+var app= angular.module('branch',[]);
+app.controller('branchData',function($scope,$http){
+
+$scope.fun=function(sen){
+
+	$http.get('/branch/'+sen).then(function(response){
+		$scope.data=response.data;
+	});
+
+	
+
+}
+$scope.routerLogIn=function(){
+	window.location.href="/signIn";
+}
+$scope.routerRegister=function(){
+	window.location.href="/register";
+}
+
+
+});
+
+
+
+</script>
+
+
+
+<script>
+	
+
+
+	</script>
